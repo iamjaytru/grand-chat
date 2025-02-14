@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/components/button";
 type Props = {
   children: React.ReactNode;
 };

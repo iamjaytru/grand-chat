@@ -1,8 +1,8 @@
 import React from "react";
-import SideBar from "./components/side-bar";
-import ChatBody from "./components/chat-body";
-import ChatHeader from "./components/chat-header";
-import ChatInput from "./components/chat-input";
+import SideBar from "../components/side-bar";
+import ChatBody from "../components/chat-list";
+import ChatHeader from "../components/chat-header";
+import ChatInput from "../components/chat-input";
 
 type Props = {};
 

@@ -1,8 +1,6 @@
 import React from "react";
-import SideBar from "@/app/components/side-bar";
-import ChatBody from "@/app/components/chat-body";
-import ChatHeader from "@/app/components/chat-header";
-import ChatInput from "@/app/components/chat-input";
+import SideBar from "@/components/side-bar";
+import ChatList from "@/components/chat-list";
 
 type Props = {
     children: React.ReactNode;
@@ -12,7 +10,7 @@ const HomePage = ({children}: Props) => {
   return (
     <div className="flex h-screen">
       <SideBar />
-      <ChatBody />
+      {/* <ChatList /> */}
        {children}
     </div>
   );

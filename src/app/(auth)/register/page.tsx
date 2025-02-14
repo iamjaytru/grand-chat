@@ -1,4 +1,4 @@
-import SignUp from '@/app/components/sign-up'
+import SignUp from '@/components/sign-up'
 import React from 'react'
 
 type Props = {}

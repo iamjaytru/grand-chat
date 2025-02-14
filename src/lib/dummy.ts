@@ -1,4 +1,4 @@
-import { LinkType } from "./types";
+import { LinkType, MessageType, UserType } from "./types";
 
 export const links: LinkType[] = [
     {
@@ -27,3 +27,18 @@ export const links: LinkType[] = [
     },
    
 ]
+
+export const messages: MessageType[] = [
+    
+]
+
+export const users: UserType[] = [
+   {
+    avatar: '/images/user.svg',
+    id: '1',
+    // name: 'John Doe',
+    // last_seen: '15 minutes ago',
+    // status: 'online',
+    // is_online: true,
+   }
+]    

@@ -11,7 +11,7 @@ type Props = {
 
 const SideBar = (props: Props) => {
   return (
-    <div className="flex flex-col w-28 h-screen bg-[#d9d9d9] p-2">
+    <div className="flex flex-col w-24 h-screen bg-[#d9d9d9] p-2">
       {/* Logo */}
       <div className="flex items-center justify-center mb-4">
         <Image

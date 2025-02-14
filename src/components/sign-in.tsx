@@ -5,9 +5,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/app/components/card";
-import { Button } from "@/app/components/button";
-import { Switch } from "@/app/components/switch";
+} from "@/components/card";
+import { Button } from "@/components/button";
+import { Switch } from "@/components/switch";
 import Link from "next/link";
 import SocialButton from "./social-button";
 import Image from "next/image";
