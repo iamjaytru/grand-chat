@@ -13,7 +13,7 @@ const UserProfile = (props: Props) => {
         alt="User"
         width={48}
         height={48}
-        className="w-12 h-12 rounded-full"
+        className="w-12 h-12"
       />
     </div>
   );

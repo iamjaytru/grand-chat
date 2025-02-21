@@ -9,7 +9,7 @@ type Props = {
 
 const ChatCard = ({ name, message }: Props) => {
   return (
-    <Link href='#' className="flex items-center gap-4 border-t border-foreground/25 w-full h-[60px] p-2 sm:p-4">
+    <Link href='#' className="flex items-center gap-4 border-t border-foreground/25 w-full h-[60px] p-1 sm:p-2">
       {/* User Avatar */}
       <div className="w-10 h-10 sm:w-12 sm:h-12">
         <UserProfile img="/images/user.svg" />

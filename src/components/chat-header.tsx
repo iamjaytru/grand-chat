@@ -1,5 +1,6 @@
 import { EllipsisVertical, Phone } from "lucide-react";
 import React from "react";
+import { Button } from "./button";
 
 type Props = {
   name: string;
@@ -18,9 +19,16 @@ const ChatHeader = ({ name, status }: Props) => {
       </div>
 
       {/* Icons */}
-      <div className="flex items-center gap-4">
-        <Phone className="cursor-pointer text-foreground text-sm" />
-        <EllipsisVertical className="cursor-pointer text-foreground text-sm" />
+      <div className="flex items-center gap-2">
+        <Button variant='ghost'>
+          <Phone size={24} className="cursor-pointer text-foreground" />
+        </Button>
+        <Button variant='ghost'>
+          <EllipsisVertical
+            size={24}
+            className="cursor-pointer text-foreground"
+          />
+        </Button>
       </div>
     </div>
   );

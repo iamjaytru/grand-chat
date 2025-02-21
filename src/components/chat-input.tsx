@@ -91,7 +91,7 @@ const ChatInput = () => {
   }, [messages]);
 
   return (
-    <div className="flex flex-col mb-6">
+    <div className="flex flex-col">
       {/* Message Display */}
       <div
         ref={messagesEndRef}

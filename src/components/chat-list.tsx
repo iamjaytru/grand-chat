@@ -21,30 +21,56 @@ const ChatList = ({ type }: Props) => {
       id: "1",
       name: "John Doe",
       message: "Hello, world!",
+      active: false, 
     },
     {
       avatar: "/images/user.svg",
       id: "2",
       name: "Jane Doe",
       message: "It's Nice meeting up with you today.",
+      active: false, 
     },
     {
       avatar: "/images/user.svg",
       id: "3",
       name: "Alice",
       message: "How are you?",
+      active: true, 
     },
     {
       avatar: "/images/user.svg",
       id: "4",
       name: "Bob",
       message: "I'm doing great, thanks!",
+      active: false, 
     },
     {
       avatar: "/images/user.svg",
       id: "5",
       name: "Charlie",
       message: "Excited to join this chat!",
+      active: true, 
+    },
+    {
+      avatar: "/images/user.svg",
+      id: "6",
+      name: "David",
+      message: "I'm here to help!",
+      active: false, 
+    },
+    {
+      avatar: "/images/user.svg",
+      id: "7",
+      name: "Emily",
+      message: "I'm available for a meeting tomorrow.",
+      active: true, 
+    },
+    {
+      avatar: "/images/user.svg",
+      id: "8",
+      name: "Frankie",
+      message: "I'm excited for the meeting!",
+      active: false, 
     },
   ];
 
@@ -59,14 +85,16 @@ const ChatList = ({ type }: Props) => {
   const pathname = usePathname();
   const currentLink = links.find((link) => link.href === pathname);
 
+  // Filter active users
+  const activeUsers = Users.filter((user) => user.active);
+
   return (
-    <div className="p-4 sm:p-8 shadow-md w-full min-w-[385px] h-screen overflow-y-auto">
+    <div className="p-4 sm:p-8 shadow-md w-full min-w-[385px] overflow-hidden">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-xl sm:text-2xl font-bold text-foreground">
-          {currentLink?.title}
+          {currentLink?.title || (type === "rooms" ? "Rooms" : "Chats")}
         </h1>
-
         <button className="p-2 hover:bg-gray-200 rounded-full transition-all">
           <Image src="/images/edit.svg" alt="Edit" width={24} height={24} />
         </button>
@@ -82,15 +110,21 @@ const ChatList = ({ type }: Props) => {
           Create New Room
         </button>
       ) : (
-        Users.map((user) => (
-          <div className="inline-flex px-2 justify-start items-center gap-5 my-4">
-            <UserProfile key={user.id} img={user.avatar} />
-          </div>
-        ))
+        // Display active users in UserProfile
+        <div className="flex gap-2 my-4">
+          {activeUsers.map((user) => (
+            <div
+              key={user.id}
+              className="inline-flex px-2 justify-start items-center gap-5 rounded-full"
+            >
+              <UserProfile img={user.avatar} />
+            </div>
+          ))}
+        </div>
       )}
 
       {/* User Profiles OR Room List */}
-      <div className="flex flex-col gap-4 mt-4">
+      <div className="flex flex-col gap-4 mt-4 overflow-y-auto max-h-[calc(100vh-150px)]">
         {type === "users"
           ? Users.map((user) => (
               <ChatCard key={user.id} name={user.name} message={user.message} />
